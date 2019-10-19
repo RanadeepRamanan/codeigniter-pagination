@@ -13,6 +13,7 @@ public function __construct()
 {
 	parent::__construct();
 	$this->load->model('paginationmodel');
+	$this->load->library('pagination');
 }
 
 class ControllerName extends CI_Controller {
@@ -101,7 +102,7 @@ public function paginationForListing(){
 		$data = array(
 			'value' =>"some value"s
 			);
-		$this->load->library('pagination');
+		
 		$total_rows=$this->paginationmodel->countDatas($data);
 		if(!$total_rows) {
 			$total_rows=0;
